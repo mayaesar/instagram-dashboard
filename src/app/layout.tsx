@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {NextUIProvider} from "@nextui-org/react";
 
 
 export const metadata: Metadata = {
@@ -14,8 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-slate-900">
-        {children}
+      <body className="dark bg-slate-900">
+        <NextUIProvider>
+            {children}
+        </NextUIProvider>
       </body>
     </html>
   );

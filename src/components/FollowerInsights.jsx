@@ -21,7 +21,7 @@ export default function FollowerInsights() {
     const weeklyData = [followData["Sunday Follower Activity"].value, followData["Monday Follower Activity"].value, followData["Tuesday Follower Activity"].value, followData["Wednesday Follower Activity"].value, followData["Thursday Follower Activity"].value, followData["Friday Follower Activity"].value, followData["Saturday Follower Activity"].value ]
 
     return(
-        <section className="grid grid-cols-1 gap-4 w-96">
+        <section className="col-span-4 grid grid-cols-1 gap-4">
             <div className="bg-slate-800 rounded-md p-3">
                 <p className="text-base">Age Range</p>
                 <Chart
@@ -30,7 +30,7 @@ export default function FollowerInsights() {
                         series: ageData.series,
                         chart: {
                             type: 'donut',
-                            height: 150
+                            height: 200
                         },
                     }}
                 />
@@ -43,7 +43,7 @@ export default function FollowerInsights() {
                         series: cityData.series,
                         chart: {
                             type: 'donut',
-                            height: 150
+                            height: 200
                         }
                     }}
                 />
@@ -56,7 +56,7 @@ export default function FollowerInsights() {
                         series: countryData.series,
                         chart: {
                             type: 'donut',
-                            height: 150
+                            height: 200
                         }
                     }}
                 />
