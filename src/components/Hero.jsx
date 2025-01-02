@@ -14,7 +14,7 @@ export default function Hero() {
                      className="rounded-full"/>
                 <div>
                     <div className="text-2xl">{user.string_map_data.Name.value}</div>
-                    <div className="text-gray-500">{followers} Followers</div>
+                    <div className="text-gray-400">{followers} Followers</div>
                 </div>
 
             </div>
