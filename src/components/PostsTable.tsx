@@ -38,7 +38,7 @@ export default function PostsTable() {
                                 isCompact
                                 showControls
                                 showShadow
-                                color="secondary"
+                                color="warning"
                                 page={page}
                                 total={pages}
                                 onChange={(page) => setPage(page)}

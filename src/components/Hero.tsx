@@ -3,7 +3,7 @@
 import {useAtom} from "jotai";
 import {insightAtom, personalInfoAtom, profileImgAtom} from "@/stores";
 import Image from "next/image";
-import {Button} from "@nextui-org/react";
+import {Button, Chip} from "@nextui-org/react";
 import {useRef} from "react";
 import {useInstagramData} from "@/stores";
 
@@ -22,19 +22,26 @@ export default function Hero() {
     }
 
     return(
-        <section className="flex items-center justify-between py-4">
-            <div className="flex items-center gap-4">
-                <Image src={profileImage} alt="profile image" width={100} height={100}
-                     className="rounded-full"/>
+        <section className="flex items-center justify-between mt-2 py-4">
+            <div className="flex items-center gap-4 ">
+                <div className="bg-gradient-to-b from-[#ff0054] to-[#ffbd00] rounded-full p-1">
+                    <div
+                        className="rounded-full w-[100px] aspect-square relative">
+                        <Image src={profileImage} alt="profile image" width={100} height={100}
+                               className="rounded-full"/>
+                    </div>
+                </div>
+
+
                 <div>
                     <div className="text-2xl">{personalInfo.Name.value}</div>
                     <div className="text-gray-400">{followers} Followers</div>
                 </div>
             </div>
 
-            <div>
-                <Button onPress={() => inputFile.current?.click()} color="primary">
-                    Import data
+            <div className="flex gap-4 items-center">
+                <Button onPress={() => inputFile.current?.click()} color="warning">
+                    Import JSON Data
                 </Button>
                 <input
                     ref={inputFile}
@@ -42,7 +49,9 @@ export default function Hero() {
                     type="file"
                     className="hidden"
                 />
+                <Chip radius="full"><a href="https://help.instagram.com/181231772500920?helpref=faq_content" target="_blank"> ? </a> </Chip>
             </div>
+
         </section>
     )
 }

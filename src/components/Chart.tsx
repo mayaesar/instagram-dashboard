@@ -15,7 +15,7 @@ const defaultOptions: Partial<ApexCharts.ApexOptions> = {
     chart: {
         background: "none"
     },
-    colors: ["#ff0054", "#ff5400", "#ffbd00", "#390099", "#9e0059"],
+    colors: ["#ff0054", "#ffbd00", "#ff5400", "#390099", "#9e0059"],
     stroke: {
         colors: undefined,
     }

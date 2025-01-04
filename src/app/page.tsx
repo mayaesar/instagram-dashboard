@@ -6,10 +6,12 @@ import AgeRangeChart from "@/components/AgeRangeChart";
 import TopCitiesChart from "@/components/TopCitiesChart";
 import TopCountriesChart from "@/components/TopCountriesChart";
 import FollowersActivityChart from "@/components/FollowersActivityChart";
+import TopAlert from "@/components/TopAlert";
 
 export default function Home() {
   return (
     <div className="max-w-screen-xl mx-auto px-4 pb-12 text-gray-100">
+        <TopAlert />
         <Hero />
         <div className="grid grid-cols-12 items-start gap-4 mt-6">
             <div className="col-span-12 grid grid-cols-12 items-stretch gap-4">
