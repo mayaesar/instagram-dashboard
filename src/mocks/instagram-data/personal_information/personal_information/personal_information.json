@@ -1,0 +1,25 @@
+{
+  "profile_user": [
+    {
+      "title": "User Information",
+      "media_map_data": {
+        "Profile Photo": {
+          "uri": "media/profile/202408/457742621_1623914194834633_5168724281180364414_n_18136753804356985.jpg",
+          "creation_timestamp": 1725158313,
+          "media_metadata": {
+            "camera_metadata": {
+              "has_camera_metadata": false
+            }
+          }
+        }
+      },
+      "string_map_data": {
+        "Name": {
+          "href": "",
+          "value": "Maya Esar",
+          "timestamp": 0
+        }
+      }
+    }
+  ]
+}
