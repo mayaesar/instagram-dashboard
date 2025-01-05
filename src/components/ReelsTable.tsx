@@ -10,11 +10,6 @@ import {useState} from "react";
 
 export default function ReelsTable() {
   const [reels] = useAtom(reelsAtom);
-
-  if (reels == null) {
-    return <div>Data not available.</div>;
-  }
-
   const [page, setPage] = useState(1);
   const perPage = 10;
   const pages = Math.ceil(reels.length / perPage);
@@ -26,6 +21,10 @@ export default function ReelsTable() {
     const bytes = new Uint8Array(str.split('')
         .map(char => char.charCodeAt(0)));
     return utf8decoder.decode(bytes);
+  }
+
+  if (!reels) {
+    return <div>Data not available.</div>;
   }
 
   return (
