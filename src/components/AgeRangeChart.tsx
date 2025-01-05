@@ -7,6 +7,7 @@ import {insightAtom} from "@/stores";
 export default function AgeRangeChart() {
     const [followData] = useAtom(insightAtom);
 
+
     const dataParser = (data: string) => {
         return data.split(", ").reduce((acc, item) => {
             const [group, percentage] = item.split(": ");
@@ -15,6 +16,10 @@ export default function AgeRangeChart() {
             return acc;
         }, { labels: [], series: [] } as { labels: string[], series: number[] });
     };
+
+    if (!followData["Follower Percentage by Age for All Genders"]) {
+        return <div>Data not available.</div>;
+    }
 
     const ageData = dataParser(followData["Follower Percentage by Age for All Genders"].value);
 

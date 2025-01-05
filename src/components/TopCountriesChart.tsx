@@ -7,6 +7,10 @@ import {insightAtom} from "@/stores";
 export default function TopCountriesChart() {
     const [followData] = useAtom(insightAtom);
 
+    if (followData == null) {
+        return <div>Data not available.</div>;
+    }
+
     const dataParser = (data: string) => {
         return data.split(", ").reduce((acc, item) => {
             const [group, percentage] = item.split(": ");
@@ -15,6 +19,10 @@ export default function TopCountriesChart() {
             return acc;
         }, { labels: [], series: [] } as { labels: string[], series: number[] });
     };
+
+    if (!followData["Follower Percentage by Country"]) {
+        return <div>Data not available.</div>;
+    }
 
     const countryData = dataParser(followData["Follower Percentage by Country"].value);
 

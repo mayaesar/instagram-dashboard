@@ -9,7 +9,9 @@ export default function LikedPosts() {
     const [likedPosts] = useAtom(likedPostsAtom);
     const [savedPosts] = useAtom(savedPostsAtom);
 
+
     const likedTime = useMemo(() => {
+        if (!likedPosts) return [];
         return likedPosts.map(post => {
             const postTime = post.string_list_data[0].timestamp;
             const date = new Date(postTime * 1000);
@@ -22,6 +24,7 @@ export default function LikedPosts() {
     }, [likedPosts]);
 
     const savedTime = useMemo(() => {
+        if (!savedPosts) return [];
         return savedPosts.map(post => {
             const postTime = post.string_map_data["Saved on"].timestamp;
             const date = new Date(postTime * 1000);

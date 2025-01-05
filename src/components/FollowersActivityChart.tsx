@@ -7,15 +7,19 @@ import {insightAtom} from "@/stores";
 export default function FollowersActivityChart() {
     const [followData] = useAtom(insightAtom);
 
+    if (followData == null) {
+        return <div>Data not available.</div>;
+    }
+
     const weeklyData = [
-        followData["Sunday Follower Activity"].value,
-        followData["Monday Follower Activity"].value,
-        followData["Tuesday Follower Activity"].value,
-        followData["Wednesday Follower Activity"].value,
-        followData["Thursday Follower Activity"].value,
-        followData["Friday Follower Activity"].value,
-        followData["Saturday Follower Activity"].value
-    ].map((item) => Number(item));
+        followData["Sunday Follower Activity"]?.value,
+        followData["Monday Follower Activity"]?.value,
+        followData["Tuesday Follower Activity"]?.value,
+        followData["Wednesday Follower Activity"]?.value,
+        followData["Thursday Follower Activity"]?.value,
+        followData["Friday Follower Activity"]?.value,
+        followData["Saturday Follower Activity"]?.value
+    ].filter(e => !!e).map((item) => Number(item));
 
     return (
         <div className="bg-slate-800 rounded-md p-3">

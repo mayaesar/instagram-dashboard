@@ -11,6 +11,10 @@ import {Pagination} from "@nextui-org/pagination";
 export default function PostsTable() {
     const [posts] = useAtom(postsAtom);
 
+    if (posts == null) {
+        return <div>Data not available.</div>;
+    }
+
     const [page, setPage] = useState(1);
     const perPage = 10;
     const pages = Math.ceil(posts.length / perPage);
